@@ -22,6 +22,11 @@ function setUserName(){
   
 if(!localStorage.getItem("name")){
     setUserName();
+
+
+    }else if(localStorage.getItem("name") == "null"){
+        myHeading.textContent = 'Please write a name! try it by using the "change user" below!';
+    
   }else{
       const storedName = localStorage.getItem("name");
       myHeading.textContent = `Greeting from Mozilla dear ${storedName}`;
@@ -35,7 +40,6 @@ if(!localStorage.getItem("name")){
 /* changing the image by using the arrow function and using onclick function*/ 
 
 const myImage = document.querySelector('img');
-
 
 function changeImage(){
     const mySrc = myImage.getAttribute("src");
