@@ -8,29 +8,15 @@
 
 // showMessage();
 
-/* changing the image by using the arrow function and using onclick function*/ 
 
-// const myImage = document.querySelector('img');
-
-// myImage.onclick = () => {
-//     const mySrc = myImage.getAttribute("src");
-//     if (mySrc === "images/firefox-icon.png"){
-//         myImage.setAttribute("src", "images/tomorrowland.png");
-//         myImage.style.height = '256px';
-//         myImage.style.width = "256px";
-//     }else{
-//         myImage.setAttribute("src", "images/firefox-icon.png");
-//     }
-// }
-
-// /* changing user */ 
+/* changing user */ 
 
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 
 function setUserName(){
     const myName = prompt("Please enter your name!");
-    localStorage.setItem("name". myName);
+    localStorage.setItem("name", myName);
     myHeading.textContent = `Greeting from Mozilla dear ${myName}!`;
 }
   
@@ -45,6 +31,21 @@ if(!localStorage.getItem("name")){
   myButton.onclick = () => {
       setUserName();
   }
+
+/* changing the image by using the arrow function and using onclick function*/ 
+
+const myImage = document.querySelector('img');
+
+myImage.onclick = () => {
+    const mySrc = myImage.getAttribute("src");
+    if (mySrc === "images/firefox-icon.png"){
+        myImage.setAttribute("src", "images/tomorrowland.png");
+        myImage.style.height = '256px';
+        myImage.style.width = "256px";
+    }else{
+        myImage.setAttribute("src", "images/firefox-icon.png");
+    }
+}
 
 
 
