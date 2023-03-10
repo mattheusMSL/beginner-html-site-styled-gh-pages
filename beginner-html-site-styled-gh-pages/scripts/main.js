@@ -16,6 +16,9 @@ let myHeading = document.querySelector("h1");
 
 function setUserName(){
     const myName = prompt("Please enter your name!");
+    // if(!myName){
+    //     setUserName();
+    // }
     localStorage.setItem("name", myName);
     myHeading.textContent = `Greeting from Mozilla dear ${myName}!`;
 }
@@ -24,8 +27,8 @@ if(!localStorage.getItem("name")){
     setUserName();
 
 
-    }else if(localStorage.getItem("name") == "null"){
-        myHeading.textContent = 'Please write a name! try it by using the "change user" below!';
+    }else if(localStorage.getItem("name") == "null" || localStorage.getItem("name") == " "  ){
+      myHeading.textContent = 'Please write a name! try it by using the "change user" below!';
     
   }else{
       const storedName = localStorage.getItem("name");
