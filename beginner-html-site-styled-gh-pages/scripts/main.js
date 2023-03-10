@@ -36,15 +36,20 @@ if(!localStorage.getItem("name")){
 
 const myImage = document.querySelector('img');
 
-myImage.onclick = () => {
+
+function changeImage(){
     const mySrc = myImage.getAttribute("src");
     if (mySrc === "images/firefox-icon.png"){
-        myImage.setAttribute("src", "images/tomorrowland.png");
+        myImage.setAttribute("src","images/tomorrowland.png");
         myImage.style.height = '256px';
         myImage.style.width = "256px";
     }else{
         myImage.setAttribute("src", "images/firefox-icon.png");
     }
+}
+
+myImage.onclick = () => {
+changeImage(); 
 }
 
 
